@@ -1,16 +1,11 @@
-# HEAL-IT · 수업 자료실
+# HEAL-IT 수업 자료실
 
-스크린 OFF, 움직임 ON — 중학교 1–3학년, 4차시와 7일 생활 속 실천을 위한 자료실입니다.
+운영 주소: https://hhj3839.github.io/heal-it-materials/
 
-## 구성
-- `dist/index.html`: 웹페이지
-- `dist/style.css`, `dist/app.js`, `dist/data.js`: 디자인과 자료 목록, 미리보기 및 다운로드 기능
-- `dist/assets/`: 최신 교육자료 PNG 19장
+`dist` 폴더의 정적 웹페이지를 GitHub Pages에 배포합니다. main 브랜치로 푸시하면 Pages 워크플로가 최신 자료를 반영합니다.
 
-자료 종류별 보기, 이미지 미리보기, 개별 PNG 및 전체 ZIP 다운로드를 제공합니다.
+자료 구성: 교사용 지도안, 수업 PPT, 학생 워크북, 교사용 워크북, 참고자료.
+다운로드는 PDF 4개와 PPTX 1개이며, 미리보기 이미지는 ZIP에 포함하지 않습니다.
 
-## 실행
-정적 웹서버의 루트를 `dist`로 설정하세요. 별도의 빌드나 데이터베이스는 필요하지 않습니다.
-전체 ZIP 다운로드는 브라우저에서 생성되므로 HTTP 서버로 실행하세요.
-
-현재 운영 중인 자료실: https://heal-it-materials.hhj3839.chatgpt.site
+GitHub 저장소의 Settings > Pages에서 배포 소스를 GitHub Actions로 사용합니다.
+자료 수정 시 미리보기와 다운로드 문서를 함께 갱신하고 배포 성공까지 확인합니다.

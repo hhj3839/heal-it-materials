@@ -1,4 +1,4 @@
-const assetUrl=file=>`${file}?v=31`;
+const assetUrl=file=>`${file}?v=32`;
 const $=s=>document.querySelector(s),grid=$('#grid'),filters=$('#filters'),dialog=$('#preview');
 let active=0,shown=[],previewSet=[];
 const categories=[...new Set(materials.map(m=>m.group))];

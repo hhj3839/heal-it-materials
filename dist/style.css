@@ -4,3 +4,5 @@
 @media(max-width:700px){.intro{flex-direction:column}.download-box{padding-top:0;text-align:left}.intro h1{max-width:none}.intro h1 span{display:inline}.eyebrow{max-width:none;font-size:14px}.downloads{padding:16px;border-radius:13px}.packages{grid-template-columns:1fr}.workspace{display:block}.package{gap:10px}.section-head{gap:12px}.usage summary{padding:14px 16px}.usage-body{padding:0 12px 12px}footer{justify-content:center}.modal-foot{gap:8px}.modal-foot .primary{order:4;width:100%}}
 
 dialog[open]{display:flex;flex-direction:column;overflow:hidden;max-height:94dvh}.modal-head,.modal-foot{flex-shrink:0}.image-wrap{min-height:0;flex:0 1 auto}
+
+.lesson-picker{display:flex;flex-wrap:wrap;gap:8px}.lesson-picker button{border:1px solid #d8cdee;border-radius:999px;padding:9px 16px;background:#fff;color:#5e497f;font-weight:700}.lesson-picker button[aria-pressed="true"]{background:#7357c2;color:#fff;border-color:#7357c2}.lesson-picker button:focus-visible{outline:3px solid #c5b4ec;outline-offset:3px}

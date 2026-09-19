@@ -1,9 +1,9 @@
-const assetUrl=file=>`${file}?v=68`;
+const assetUrl=file=>`${file}?v=69`;
 const $=s=>document.querySelector(s),grid=$('#grid'),filters=$('#filters'),dialog=$('#preview');
 let active=0,shown=[],previewSet=[];
 const categories=[...new Set(materials.map(m=>m.group))];
 const labels=categories;
-const help={'교사용 지도안':'차시별 2쪽 · 총 8쪽','수업 PPT':'기존 통합 PPT · 새 차시별 PPT는 페이지 위에서 확인하세요.','학생 워크북':'표지·목차 포함 10쪽','교사용 워크북':'학생용과 같은 쪽 순서 · 예시 답안과 지도 도움말','참고자료':'카드·평가 기록 · 실천 운영·교육과정·평가 도움말'};
+const help={'교사용 지도안':'차시별 2쪽 · 총 8쪽','수업 PPT':'1차시 20장 · 2차시 16장 · 3차시 20장 · 4차시 20장','학생 워크북':'표지·목차 포함 10쪽','교사용 워크북':'학생용과 같은 쪽 순서 · 예시 답안과 지도 도움말','참고자료':'카드·평가 기록 · 실천 운영·교육과정·평가 도움말'};
 categories.forEach((group,index)=>{const b=document.createElement('button');b.innerHTML=`<span>${labels[index]}</span><span class="tab-count">${materials.filter(m=>m.group===group).length}</span>`;b.setAttribute('aria-pressed',index===0);b.onclick=()=>{filters.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));select(group)};filters.append(b)});
 function select(group){shown=materials.filter(m=>m.group===group);$('#groupHelp').textContent=help[group]||'';render()}
 function render(){grid.replaceChildren();$('#count').textContent=`${shown.length}장`;grid.classList.toggle('slides',shown[0]?.group==='수업 PPT');shown.forEach((m,i)=>{const card=document.createElement('article');card.className='card';const type=m.file.endsWith('.jpg')?'JPG':'PNG';card.innerHTML=`<button class="thumb" aria-label="${m.title} 미리보기"><img src="${assetUrl(m.file)}" alt="${m.title}" loading="lazy" width="${m.width||1055}" height="${m.height||1491}"></button><div class="info">${m.lesson?`<p class="lesson-label">${m.lesson}차시</p>`:''}<h3>${m.title}</h3><div class="actions"><button>미리보기</button></div></div>`;card.querySelectorAll('button').forEach(b=>b.onclick=()=>{previewSet=shown.slice();open(i)});grid.append(card)})}
